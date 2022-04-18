@@ -74,6 +74,62 @@
         }
       }
     },
+    "/Users/matthewberenyi/Desktop/fullstack_projects/SolarCoffee/SolarCoffee.Services/SolarCoffee.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/matthewberenyi/Desktop/fullstack_projects/SolarCoffee/SolarCoffee.Services/SolarCoffee.Services.csproj",
+        "projectName": "SolarCoffee.Services",
+        "projectPath": "/Users/matthewberenyi/Desktop/fullstack_projects/SolarCoffee/SolarCoffee.Services/SolarCoffee.Services.csproj",
+        "packagesPath": "/Users/matthewberenyi/.nuget/packages/",
+        "outputPath": "/Users/matthewberenyi/Desktop/fullstack_projects/SolarCoffee/SolarCoffee.Services/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/matthewberenyi/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "/Users/matthewberenyi/Desktop/fullstack_projects/SolarCoffee/SolarCoffee.Data/SolarCoffee.Data.csproj": {
+                "projectPath": "/Users/matthewberenyi/Desktop/fullstack_projects/SolarCoffee/SolarCoffee.Data/SolarCoffee.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.406/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "/Users/matthewberenyi/Desktop/fullstack_projects/SolarCoffee/SolarCoffee.Web/SolarCoffee.Web.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -98,6 +154,9 @@
             "projectReferences": {
               "/Users/matthewberenyi/Desktop/fullstack_projects/SolarCoffee/SolarCoffee.Data/SolarCoffee.Data.csproj": {
                 "projectPath": "/Users/matthewberenyi/Desktop/fullstack_projects/SolarCoffee/SolarCoffee.Data/SolarCoffee.Data.csproj"
+              },
+              "/Users/matthewberenyi/Desktop/fullstack_projects/SolarCoffee/SolarCoffee.Services/SolarCoffee.Services.csproj": {
+                "projectPath": "/Users/matthewberenyi/Desktop/fullstack_projects/SolarCoffee/SolarCoffee.Services/SolarCoffee.Services.csproj"
               }
             }
           }

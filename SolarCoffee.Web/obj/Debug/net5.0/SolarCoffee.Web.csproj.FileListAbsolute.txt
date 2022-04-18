@@ -41,3 +41,5 @@
 /Users/matthewberenyi/Desktop/fullstack_projects/SolarCoffee/SolarCoffee.Web/bin/Debug/net5.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
 /Users/matthewberenyi/Desktop/fullstack_projects/SolarCoffee/SolarCoffee.Web/bin/Debug/net5.0/SolarCoffee.Data.dll
 /Users/matthewberenyi/Desktop/fullstack_projects/SolarCoffee/SolarCoffee.Web/bin/Debug/net5.0/SolarCoffee.Data.pdb
+/Users/matthewberenyi/Desktop/fullstack_projects/SolarCoffee/SolarCoffee.Web/bin/Debug/net5.0/SolarCoffee.Services.dll
+/Users/matthewberenyi/Desktop/fullstack_projects/SolarCoffee/SolarCoffee.Web/bin/Debug/net5.0/SolarCoffee.Services.pdb

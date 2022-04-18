@@ -913,6 +913,19 @@
         "runtime": {
           "bin/placeholder/SolarCoffee.Data.dll": {}
         }
+      },
+      "SolarCoffee.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "SolarCoffee.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SolarCoffee.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SolarCoffee.Services.dll": {}
+        }
       }
     }
   },
@@ -2353,6 +2366,11 @@
       "type": "project",
       "path": "../SolarCoffee.Data/SolarCoffee.Data.csproj",
       "msbuildProject": "../SolarCoffee.Data/SolarCoffee.Data.csproj"
+    },
+    "SolarCoffee.Services/1.0.0": {
+      "type": "project",
+      "path": "../SolarCoffee.Services/SolarCoffee.Services.csproj",
+      "msbuildProject": "../SolarCoffee.Services/SolarCoffee.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2363,6 +2381,7 @@
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.1",
       "Newtonsoft.Json >= 12.0.3",
       "SolarCoffee.Data >= 1.0.0",
+      "SolarCoffee.Services >= 1.0.0",
       "Swashbuckle.AspNetCore >= 5.6.3"
     ]
   },
@@ -2393,6 +2412,9 @@
           "projectReferences": {
             "/Users/matthewberenyi/Desktop/fullstack_projects/SolarCoffee/SolarCoffee.Data/SolarCoffee.Data.csproj": {
               "projectPath": "/Users/matthewberenyi/Desktop/fullstack_projects/SolarCoffee/SolarCoffee.Data/SolarCoffee.Data.csproj"
+            },
+            "/Users/matthewberenyi/Desktop/fullstack_projects/SolarCoffee/SolarCoffee.Services/SolarCoffee.Services.csproj": {
+              "projectPath": "/Users/matthewberenyi/Desktop/fullstack_projects/SolarCoffee/SolarCoffee.Services/SolarCoffee.Services.csproj"
             }
           }
         }
