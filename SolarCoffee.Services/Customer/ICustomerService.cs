@@ -1,7 +1,12 @@
+using System.Collections.Generic;
+
 namespace SolarCoffee.Services.Customer
 {
-    public interface CustomerService
+    public interface ICustomerService
     {
-        
+        List<Data.Models.Customer> GetAllCustomers();
+        ServiceResponse<Data.Models.Customer> CreateCustomer(Data.Models.Customer customer);
+        ServiceResponse<bool> DeleteCustomer(int customerId);
+        Data.Models.Customer GetCustomerById(int customerId);
     }
 }

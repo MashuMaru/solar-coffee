@@ -14,7 +14,7 @@
         "outputPath": "/Users/matthewberenyi/Desktop/fullstack_projects/SolarCoffee/SolarCoffee.Data/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/matthewberenyi/.nuget/NuGet/NuGet.Config"
+          "/Users/matthewberenyi/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
