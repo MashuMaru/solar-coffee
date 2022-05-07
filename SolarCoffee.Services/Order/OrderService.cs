@@ -41,6 +41,8 @@ namespace SolarCoffee.Services.Order
 
         public ServiceResponse<bool> GenerateInvoiceForOrder(SalesOrder order)
         {
+            _logger.LogInformation("Generating new Open Order");
+
             foreach (var item in order.SalesOrderItems)
             {
                 item.Product = _productService
@@ -55,12 +57,12 @@ namespace SolarCoffee.Services.Order
                 _db.SalesOrders.Add(order);
                 _db.SaveChanges();
 
-                return new ServiceResponse<bool>()
+                return new ServiceResponse<bool>
                 {
-                    Data = true,
                     IsSuccess = true,
-                    Message = "Successfully created Invoice.",
-                    Time = DateTime.UtcNow
+                    Message = "Successfully created Sales Order.",
+                    Time = DateTime.UtcNow,
+                    Data = true
                 };
             }
             catch (Exception e)
@@ -77,7 +79,33 @@ namespace SolarCoffee.Services.Order
 
         public ServiceResponse<bool> MarkFulfilled(int orderId)
         {
-            throw new System.NotImplementedException();
+            var order = _db.SalesOrders.Find(orderId);
+            order.UpdatedOn = DateTime.UtcNow;
+            order.IsPaid = true;
+
+            try
+            {
+                _db.SalesOrders.Update(order);
+                _db.SaveChanges();
+
+                return new ServiceResponse<bool>
+                {
+                    Data = true,
+                    Time = DateTime.UtcNow,
+                    Message = $"Marked order as fulfilled for {order.Id}",
+                    IsSuccess = true
+                };
+            }
+            catch (Exception e)
+            {
+                return new ServiceResponse<bool>
+                {
+                    Data = false,
+                    Time = DateTime.UtcNow,
+                    Message = e.StackTrace,
+                    IsSuccess = false
+                };
+            }
         }
     }
 }
