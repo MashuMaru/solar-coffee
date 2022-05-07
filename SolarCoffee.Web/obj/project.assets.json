@@ -2398,7 +2398,7 @@
       "outputPath": "/Users/matthewberenyi/Desktop/fullstack_projects/SolarCoffee/SolarCoffee.Web/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/matthewberenyi/.config/NuGet/NuGet.Config"
+        "/Users/matthewberenyi/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
