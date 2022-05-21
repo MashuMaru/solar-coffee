@@ -22,6 +22,10 @@ namespace SolarCoffee.Services.Product
         public Data.Models.Product GetProductById(int id)
         {
             var productById = _db.Products.Find(id);
+            if (productById == null)
+            {
+                throw new Exception("No product found using that id.");
+            }
             return productById;
         }
         

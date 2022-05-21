@@ -7,6 +7,7 @@ using SolarCoffee.Web.Serialization;
 namespace SolarCoffee.Web.Controllers
 {
     [ApiController]
+    [Route("/api/")]
     public class ProductController : ControllerBase
     {
         private readonly ILogger<ProductController> _logger;
@@ -33,7 +34,20 @@ namespace SolarCoffee.Web.Controllers
             _logger.LogInformation("Getting product by Id");
             var product = _productService.GetProductById(id);
             var mappedProduct = ProductMapper.SerializeProductModel(product);
+
             return Ok(mappedProduct);
+        }
+
+        [HttpPatch("/api/products/{id}/archive")]
+        public ActionResult ArchiveProductById(int id)
+        {
+            _logger.LogInformation($"Archiving product {id}.");
+            var product = _productService.ArchiveProduct(id);
+            if (!product.IsSuccess)
+            {
+                return BadRequest();
+            }
+            return Ok(product);
         }
     }
 }
