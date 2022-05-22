@@ -7,7 +7,7 @@ using SolarCoffee.Web.Serialization;
 namespace SolarCoffee.Web.Controllers
 {
     [ApiController]
-    [Route("/api/")]
+    [Route("/api")]
     public class ProductController : ControllerBase
     {
         private readonly ILogger<ProductController> _logger;
@@ -18,7 +18,7 @@ namespace SolarCoffee.Web.Controllers
             _logger = logger;
             _productService = productService;
         }
-        [HttpGet("/api/products")]
+        [HttpGet("/products")]
         public ActionResult GetAllProducts()
         {
             _logger.LogInformation("Getting all products");
@@ -28,7 +28,7 @@ namespace SolarCoffee.Web.Controllers
             return Ok(productViewModels);
         }
 
-        [HttpGet("/api/products/{id}")]
+        [HttpGet("/products/{id}")]
         public ActionResult GetProductById(int id)
         {
             _logger.LogInformation("Getting product by Id");
@@ -38,16 +38,16 @@ namespace SolarCoffee.Web.Controllers
             return Ok(mappedProduct);
         }
 
-        [HttpPatch("/api/products/{id}/archive")]
+        [HttpPatch("/products/{id}/archive")]
         public ActionResult ArchiveProductById(int id)
         {
             _logger.LogInformation($"Archiving product {id}.");
-            var product = _productService.ArchiveProduct(id);
-            if (!product.IsSuccess)
+            var archivedProduct = _productService.ArchiveProduct(id);
+            if (!archivedProduct.IsSuccess)
             {
                 return BadRequest();
             }
-            return Ok(product);
+            return Ok(archivedProduct);
         }
     }
 }

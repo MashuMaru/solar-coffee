@@ -2,7 +2,7 @@ using System;
 
 namespace SolarCoffee.Web.ViewModels
 {
-    public class ProductModel
+    public class ProductDataModel
     {
         public int Id { get; set; }
         public DateTime CreatedOn { get; set; }

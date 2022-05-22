@@ -1,10 +1,9 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-using System.Data;
 
-namespace SolarCoffee.Data.Models
+namespace SolarCoffee.Web.ViewModels
 {
-    public class CustomerAddress
+    public class CustomerAddressDataModel
     {
         public int Id { get; set; }
         public DateTime CreatedOn { get; set; }
@@ -15,12 +14,12 @@ namespace SolarCoffee.Data.Models
         
         [MaxLength(100)]
         public string AddressLine2 { get; set; }
-        
-        [MaxLength(100)]
-        public string City { get; set; }
 
         [MaxLength(100)]
         public string State { get; set; }
+        
+        [MaxLength(100)]
+        public string City { get; set; }
         
         [MaxLength(10)]
         public string PostCode { get; set; }

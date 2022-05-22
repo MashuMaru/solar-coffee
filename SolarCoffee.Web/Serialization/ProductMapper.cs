@@ -4,9 +4,9 @@ namespace SolarCoffee.Web.Serialization
 {
     public static class ProductMapper
     {
-        public static ProductModel SerializeProductModel(Data.Models.Product product)
+        public static ProductDataModel SerializeProductModel(Data.Models.Product product)
         {
-            return new ProductModel
+            return new ProductDataModel
             {
                 Id = product.Id,
                 CreatedOn = product.CreatedOn,
@@ -19,7 +19,7 @@ namespace SolarCoffee.Web.Serialization
             };
         }
         
-        public static Data.Models.Product SerializeProductModel(ProductModel  product)
+        public static Data.Models.Product SerializeProductModel(ProductDataModel product)
         {
             return new Data.Models.Product
             {
