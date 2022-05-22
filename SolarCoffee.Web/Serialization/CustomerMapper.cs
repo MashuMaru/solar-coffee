@@ -46,10 +46,6 @@ namespace SolarCoffee.Web.Serialization
                 UpdatedOn = customer.PrimaryAddress.UpdatedOn
             };
 
-            // clear seperation between the View models and models.
-            // TODO: CustomerModel (to)
-            // TODO: CustomerDataModel (from)
-
             return new Customer
             {
                 Id = customer.Id,
