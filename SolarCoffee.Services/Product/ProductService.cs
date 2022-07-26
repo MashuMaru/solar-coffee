@@ -14,6 +14,7 @@ namespace SolarCoffee.Services.Product
         {
             _db = dbContext;
         }
+        
         public List<Data.Models.Product> GetAllProducts()
         {
             return _db.Products.ToList();
@@ -26,6 +27,7 @@ namespace SolarCoffee.Services.Product
             {
                 throw new Exception("No product found using that id.");
             }
+            
             return productById;
         }
         
@@ -42,6 +44,7 @@ namespace SolarCoffee.Services.Product
                 };
                 _db.ProductInventories.Add(newInventory);
                 _db.SaveChanges();
+
                 return new ServiceResponse<Data.Models.Product>
                 {
                     Data = product,

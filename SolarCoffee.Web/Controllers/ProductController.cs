@@ -18,13 +18,16 @@ namespace SolarCoffee.Web.Controllers
             _logger = logger;
             _productService = productService;
         }
+
         [HttpGet("/products")]
         public ActionResult GetAllProducts()
         {
             _logger.LogInformation("Getting all products");
             var products = _productService.GetAllProducts();
             var productViewModels = 
-                products.Select(product => ProductMapper.SerializeProductModel(product));
+                products.Select(
+                    product => ProductMapper.SerializeProductModel(product));
+
             return Ok(productViewModels);
         }
 
@@ -47,6 +50,7 @@ namespace SolarCoffee.Web.Controllers
             {
                 return BadRequest();
             }
+
             return Ok(archivedProduct);
         }
     }
