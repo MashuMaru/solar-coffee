@@ -10,9 +10,6 @@ namespace SolarCoffee.Web.Controllers
     [Route("/api")]
     public class ProductController : ControllerBase
     {
-        private readonly ILogger<ProductController> _logger;
-        private readonly IProductService _productService;
-
         public ProductController(ILogger<ProductController> logger, IProductService productService)
         {
             _logger = logger;
@@ -53,5 +50,8 @@ namespace SolarCoffee.Web.Controllers
 
             return Ok(archivedProduct);
         }
+
+        private readonly ILogger<ProductController> _logger;
+        private readonly IProductService _productService;
     }
 }
