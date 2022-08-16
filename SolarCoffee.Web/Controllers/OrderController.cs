@@ -8,7 +8,6 @@ using SolarCoffee.Web.ViewModels;
 namespace SolarCoffee.Web.Controllers
 {
     [ApiController]
-    [Route("/orders")]
     public class OrderController : ControllerBase
     {
         public OrderController(
@@ -21,7 +20,7 @@ namespace SolarCoffee.Web.Controllers
             _customerService = customerService;
         }
 
-        [HttpPost("/invoice")]
+        [HttpPost("/orders/invoice")]
         public ActionResult GenerateNewOrder([FromBody] InvoiceDataModel invoice)
         {
             _logger.LogInformation("Generating invoice.");

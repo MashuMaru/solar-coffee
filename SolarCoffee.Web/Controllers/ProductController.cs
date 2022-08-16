@@ -41,13 +41,13 @@ namespace SolarCoffee.Web.Controllers
         public ActionResult ArchiveProductById(int id)
         {
             _logger.LogInformation($"Archiving product {id}.");
-            var archivedProduct = _productService.ArchiveProduct(id);
-            if (!archivedProduct.IsSuccess)
+            var result = _productService.ArchiveProduct(id);
+            if (!result.IsSuccess)
             {
                 return BadRequest();
             }
 
-            return Ok(archivedProduct);
+            return NoContent();
         }
 
         private readonly ILogger<ProductController> _logger;
