@@ -15,7 +15,7 @@ namespace SolarCoffee.Web.Controllers
             _productService = productService;
         }
 
-        [HttpGet("/api/products")]
+        [HttpGet("api/products")]
         public ActionResult GetAllProducts()
         {
             _logger.LogInformation("Getting all products");
@@ -27,7 +27,7 @@ namespace SolarCoffee.Web.Controllers
             return Ok(productViewModels);
         }
 
-        [HttpGet("/api/products/{id}")]
+        [HttpGet("api/products/{id}")]
         public ActionResult GetProductById(int id)
         {
             _logger.LogInformation("Getting product by Id");
@@ -37,7 +37,7 @@ namespace SolarCoffee.Web.Controllers
             return Ok(mappedProduct);
         }
 
-        [HttpPatch("/api/products/{id}/archive")]
+        [HttpPatch("api/products/{id}/archive")]
         public ActionResult ArchiveProductById(int id)
         {
             _logger.LogInformation($"Archiving product {id}.");

@@ -2,6 +2,11 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": ".NET Core Attach",
+            "type": "coreclr",
+            "request": "attach"
+        },
+        {
             // Use IntelliSense to find out which attributes exist for C# debugging
             // Use hover for the description of the existing attributes
             // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
@@ -10,9 +15,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/SolarCoffee.Test/bin/Debug/netcoreapp3.1/SolarCoffee.Test.dll",
+            "program": "${workspaceFolder}/SolarCoffee.Web/bin/Debug/net5.0/SolarCoffee.Web.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/SolarCoffee.Test",
+            "cwd": "${workspaceFolder}/SolarCoffee.Web",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "internalConsole",
             "stopAtEntry": false

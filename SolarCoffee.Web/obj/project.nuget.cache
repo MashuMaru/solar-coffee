@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ebrZeXlh8L4u4/7nrTek4pIQg6EA3PFYOfiwNapP6PpQUJZvI31gsQZZr2ftY03s2a2Bx2/n1uNypaXASRgAxw==",
+  "dgSpecHash": "KwHItKpT4lhFo2mgVGIzFBiYTRZ/lZDWJ5oVXTAN5t1QcTkrVvlmSo5tDw3ITW6H34mW6ktCmpIzASiYWDGzHA==",
   "success": true,
   "projectFilePath": "/Users/matthewberenyi/Desktop/fullstack_projects/SolarCoffee/SolarCoffee.Web/SolarCoffee.Web.csproj",
   "expectedPackageFiles": [
@@ -73,7 +73,8 @@
     "/Users/matthewberenyi/.nuget/packages/system.security.cryptography.xml/4.5.0/system.security.cryptography.xml.4.5.0.nupkg.sha512",
     "/Users/matthewberenyi/.nuget/packages/system.security.permissions/4.5.0/system.security.permissions.4.5.0.nupkg.sha512",
     "/Users/matthewberenyi/.nuget/packages/system.security.principal.windows/4.5.0/system.security.principal.windows.4.5.0.nupkg.sha512",
-    "/Users/matthewberenyi/.nuget/packages/system.text.encodings.web/4.5.0/system.text.encodings.web.4.5.0.nupkg.sha512"
+    "/Users/matthewberenyi/.nuget/packages/system.text.encodings.web/4.5.0/system.text.encodings.web.4.5.0.nupkg.sha512",
+    "/Users/matthewberenyi/.nuget/packages/microsoft.netcore.app.host.osx-x64/5.0.17/microsoft.netcore.app.host.osx-x64.5.0.17.nupkg.sha512"
   ],
   "logs": []
 }

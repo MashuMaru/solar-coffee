@@ -43,3 +43,4 @@
 /Users/matthewberenyi/Desktop/fullstack_projects/SolarCoffee/SolarCoffee.Web/bin/Debug/net5.0/SolarCoffee.Data.pdb
 /Users/matthewberenyi/Desktop/fullstack_projects/SolarCoffee/SolarCoffee.Web/bin/Debug/net5.0/SolarCoffee.Services.dll
 /Users/matthewberenyi/Desktop/fullstack_projects/SolarCoffee/SolarCoffee.Web/bin/Debug/net5.0/SolarCoffee.Services.pdb
+/Users/matthewberenyi/Desktop/fullstack_projects/SolarCoffee/SolarCoffee.Web/obj/Debug/net5.0/refint/SolarCoffee.Web.dll
