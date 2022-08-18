@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <_EnableMacOSCodeSign>false</_EnableMacOSCodeSign>
   </PropertyGroup>
 
   <ItemGroup>
