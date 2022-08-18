@@ -8,8 +8,6 @@ namespace SolarCoffee.Web.Serialization
     {
         public static CustomerDataModel SerialisesCustomer(Customer customer)
         {
-            
-
             return new CustomerDataModel
             {
                 Id = customer.Id,
@@ -23,19 +21,6 @@ namespace SolarCoffee.Web.Serialization
 
         public static Customer SerialiseCustomer(CustomerDataModel customer)
         {
-            var address = new CustomerAddress
-            {
-                Id = customer.Id,
-                AddressLine1 = customer.PrimaryAddress.AddressLine1,
-                AddressLine2 = customer.PrimaryAddress.AddressLine2,
-                City = customer.PrimaryAddress.City,
-                State = customer.PrimaryAddress.State,
-                Country = customer.PrimaryAddress.Country,
-                PostCode = customer.PrimaryAddress.PostCode,
-                CreatedOn = customer.PrimaryAddress.CreatedOn,
-                UpdatedOn = customer.PrimaryAddress.UpdatedOn
-            };
-
             return new Customer
             {
                 Id = customer.Id,
@@ -43,13 +28,28 @@ namespace SolarCoffee.Web.Serialization
                 UpdatedOn = customer.UpdatedOn,
                 FirstName = customer.FirstName,
                 LastName = customer.LastName,
-                PrimaryAddress = address
+                PrimaryAddress = MapCustomerAddressData(customer.PrimaryAddress)
             };
         }
 
         public static CustomerAddressDataModel MapCustomerAddress(CustomerAddress address)
         {
             return new CustomerAddressDataModel
+            {
+                AddressLine1 = address.AddressLine1,
+                AddressLine2 = address.AddressLine2,
+                City = address.City,
+                State = address.State,
+                PostCode = address.PostCode,
+                Country = address.Country,
+                CreatedOn = DateTime.UtcNow,
+                UpdatedOn = DateTime.UtcNow
+            };
+        }
+
+         public static CustomerAddress MapCustomerAddressData(CustomerAddressDataModel address)
+        {
+            return new CustomerAddress
             {
                 AddressLine1 = address.AddressLine1,
                 AddressLine2 = address.AddressLine2,
