@@ -11,7 +11,8 @@ namespace SolarCoffee.Web.Serialization
         public static SalesOrder SerialiseInvoiceToOrder(InvoiceDataModel invoice)
         {
             var salesOrderItems = invoice.LineItems
-                .Select(item => new SalesOrderItem {
+                .Select(item => new SalesOrderItem 
+                {
                     Id = item.Id,
                     Quantity = item.Quantity, 
                     Product = ProductMapper.SerializeProductModel(item.Product)
@@ -27,7 +28,8 @@ namespace SolarCoffee.Web.Serialization
         
         public static List<OrderDataModel> SerialisingOrdersToViewModels (IEnumerable<SalesOrder> orders)
         {
-            return orders.Select(order => new OrderDataModel {
+            return orders.Select(order => new OrderDataModel 
+            {
                 Id = order.Id,
                 CreatedOn = order.CreatedOn,
                 UpdatedOn = order.UpdatedOn,
@@ -37,9 +39,10 @@ namespace SolarCoffee.Web.Serialization
             }).ToList();
         }
 
-        private static List<SalesOrderItemDataModel> SerialisesSalesOrderItem(List<SalesOrderItem> salesOrderItems)
+        private static List<SalesOrderItemDataModel> SerialisesSalesOrderItem(IEnumerable<SalesOrderItem> orderItems)
         {
-            return salesOrderItems.Select(item => new SalesOrderItemDataModel {
+            return orderItems.Select(item => new SalesOrderItemDataModel 
+            {
                 Id = item.Id,
                 Quantity = item.Quantity, 
                 Product = ProductMapper.SerializeProductModel(item.Product),
