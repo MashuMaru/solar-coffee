@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
-using SolarCoffee.Data.Models;
 
-namespace SolarCoffee.Web.ViewModels
+namespace SolarCoffee.Data.Models
 {
-    public class OrderDataModel
+    public class SalesOrderDataModel
     {
         public int Id { get; set; }
         public DateTime CreatedOn { get; set; }

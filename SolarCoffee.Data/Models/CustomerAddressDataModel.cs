@@ -1,10 +1,9 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-using System.Data;
 
 namespace SolarCoffee.Data.Models
 {
-    public class CustomerAddress
+    public class CustomerAddressDataModel
     {
         public int Id { get; set; }
         public DateTime CreatedOn { get; set; }

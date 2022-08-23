@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using SolarCoffee.Data;
+using SolarCoffee.Data.Models;
 
 namespace SolarCoffee.Services.Customer
 {
@@ -15,21 +16,37 @@ namespace SolarCoffee.Services.Customer
             _db = dbContext;
         }
         
-        public List<Data.Models.Customer> GetAllCustomers()
+        public ServiceResponse<List<CustomerDataModel>> GetAllCustomers()
         {
-            return _db.Customers
-                .Include(customer => customer.PrimaryAddress)
-                .OrderBy(customer => customer.LastName)
-                .ToList();
+            try 
+            {
+                var result = _db.Customers.Include(customer => customer.PrimaryAddress).OrderBy(customer => customer.LastName).ToList();
+                return new ServiceResponse<List<CustomerDataModel>>()
+                {
+                    Data = result,
+                    IsSuccess = true,
+                    Time = DateTime.UtcNow
+                };
+            }
+            catch (Exception e)
+            {
+                return new ServiceResponse<List<CustomerDataModel>>()
+                {
+                    Data = null,
+                    IsSuccess = false,
+                    Message = e.StackTrace,
+                    Time = DateTime.UtcNow
+                };
+            }
         }
 
-        public ServiceResponse<Data.Models.Customer> CreateCustomer(Data.Models.Customer customer)
+        public ServiceResponse<CustomerDataModel> CreateCustomer(CustomerDataModel customer)
         {
             try
             {
                 _db.Customers.Add(customer);
                 _db.SaveChanges();
-                return new ServiceResponse<Data.Models.Customer>()
+                return new ServiceResponse<CustomerDataModel>()
                 {
                     IsSuccess = true,
                     Message = "Customer added to the database.",
@@ -39,7 +56,7 @@ namespace SolarCoffee.Services.Customer
             }
             catch (Exception e)
             {
-                return new ServiceResponse<Data.Models.Customer>()
+                return new ServiceResponse<CustomerDataModel>()
                 {
                     Data = null,
                     IsSuccess = false,
@@ -86,9 +103,9 @@ namespace SolarCoffee.Services.Customer
             }
         }
 
-        public Data.Models.Customer GetCustomerById(int customerId)
+        public CustomerDataModel GetCustomerById(int customerId)
         {
             return _db.Customers.Find(customerId);
         }
-    }
+  }
 }

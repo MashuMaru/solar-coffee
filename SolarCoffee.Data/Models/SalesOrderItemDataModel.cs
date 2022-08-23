@@ -1,5 +1,3 @@
-using SolarCoffee.Web.ViewModels;
-
 namespace SolarCoffee.Data.Models
 {
     public class SalesOrderItemDataModel

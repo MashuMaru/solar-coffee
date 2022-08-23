@@ -19,7 +19,7 @@ namespace SolarCoffee.Services.Inventory
             _logger = logger;
         }
         
-        public List<ProductInventory> GetCurrentInventory()
+        public List<ProductInventoryDataModel> GetCurrentInventory()
         {
             return _db.ProductInventories
                 .Include(pi => pi.Product)
@@ -27,7 +27,7 @@ namespace SolarCoffee.Services.Inventory
                 .ToList();
         }
 
-        public ServiceResponse<ProductInventory> UpdateUnitsAvailable(int id, int adjustment)
+        public ServiceResponse<ProductInventoryDataModel> UpdateUnitsAvailable(int id, int adjustment)
         {
             try
             {
@@ -48,7 +48,7 @@ namespace SolarCoffee.Services.Inventory
                 
                 _db.SaveChanges();
 
-                return new ServiceResponse<ProductInventory>()
+                return new ServiceResponse<ProductInventoryDataModel>()
                 {
                     Data = inventory,
                     IsSuccess = true,
@@ -58,7 +58,7 @@ namespace SolarCoffee.Services.Inventory
             }
             catch (Exception e)
             {
-                return new ServiceResponse<ProductInventory>()
+                return new ServiceResponse<ProductInventoryDataModel>()
                 {
                     Data = null,
                     IsSuccess = false,
@@ -68,16 +68,16 @@ namespace SolarCoffee.Services.Inventory
             }
         }
 
-        public ProductInventory GetByProductId(int productId)
+        public ProductInventoryDataModel GetByProductId(int productId)
         {
             return _db.ProductInventories
                 .Include(pi => pi.Product)
                 .First(pi => pi.Product.Id == productId);
         }
 
-        private void CreateSnapShot(ProductInventory productInventory)
+        private void CreateSnapShot(ProductInventoryDataModel productInventory)
         {
-            var snapshot = new ProductInventorySnapshot()
+            var snapshot = new ProductInventorySnapshotDataModel()
             {
                 Id = productInventory.Id,
                 Product = productInventory.Product,
@@ -87,7 +87,7 @@ namespace SolarCoffee.Services.Inventory
             _db.ProductInventorySnapshots.Add(snapshot);
         }
 
-        public List<ProductInventorySnapshot> GetSnapShotHistory()
+        public List<ProductInventorySnapshotDataModel> GetSnapShotHistory()
         {
             // TODO: Let user determine how many hours ago. /snap-shot-history/{q?}
             var earliest = DateTime.UtcNow - TimeSpan.FromHours(6);

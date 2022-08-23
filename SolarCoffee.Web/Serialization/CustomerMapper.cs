@@ -6,9 +6,9 @@ namespace SolarCoffee.Web.Serialization
 {
     public class CustomerMapper
     {
-        public static CustomerDataModel SerialisesCustomer(Customer customer)
+        public static CustomerModel SerialisesCustomer(CustomerDataModel customer)
         {
-            return new CustomerDataModel
+            return new CustomerModel
             {
                 Id = customer.Id,
                 CreatedOn = customer.CreatedOn,
@@ -19,9 +19,9 @@ namespace SolarCoffee.Web.Serialization
             };
         }
 
-        public static Customer SerialiseCustomer(CustomerDataModel customer)
+        public static CustomerDataModel SerialiseCustomer(CustomerModel customer)
         {
-            return new Customer
+            return new CustomerDataModel
             {
                 Id = customer.Id,
                 CreatedOn = customer.CreatedOn,
@@ -32,9 +32,9 @@ namespace SolarCoffee.Web.Serialization
             };
         }
 
-        public static CustomerAddressDataModel MapCustomerAddress(CustomerAddress address)
+        public static CustomerAddressModel MapCustomerAddress(CustomerAddressDataModel address)
         {
-            return new CustomerAddressDataModel
+            return new CustomerAddressModel
             {
                 AddressLine1 = address.AddressLine1,
                 AddressLine2 = address.AddressLine2,
@@ -47,9 +47,9 @@ namespace SolarCoffee.Web.Serialization
             };
         }
 
-         public static CustomerAddress MapCustomerAddressData(CustomerAddressDataModel address)
+         public static CustomerAddressDataModel MapCustomerAddressData(CustomerAddressModel address)
         {
-            return new CustomerAddress
+            return new CustomerAddressDataModel
             {
                 AddressLine1 = address.AddressLine1,
                 AddressLine2 = address.AddressLine2,

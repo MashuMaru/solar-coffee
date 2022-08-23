@@ -29,7 +29,7 @@ namespace SolarCoffee.Services.Order
             _inventoryService = inventoryService;
         }
         
-        public List<SalesOrder> GetOrders()
+        public List<SalesOrderDataModel> GetOrders()
         {
             return _db.SalesOrders
                 .Include(salesOrder => salesOrder.Customer)
@@ -39,7 +39,7 @@ namespace SolarCoffee.Services.Order
                 .ToList();
         }
 
-        public ServiceResponse<bool> GenerateInvoiceForOrder(SalesOrder order)
+        public ServiceResponse<bool> GenerateInvoiceForOrder(SalesOrderDataModel order)
         {
             _logger.LogInformation("Generating new Open Order");
 

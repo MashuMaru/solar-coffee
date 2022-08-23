@@ -1,14 +1,14 @@
 using System;
+using System.Collections.Generic;
 
 namespace SolarCoffee.Web.ViewModels
 {
-    public class CustomerDataModel
+    public class InvoiceModel
     {
         public int Id { get; set; }
         public DateTime CreatedOn { get; set; }
         public DateTime UpdatedOn { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public CustomerAddressDataModel PrimaryAddress { get; set; }
+        public int CustomerId { get; set; }
+        public List<SalesOrderItemModel> LineItems { get; set; }
     }
 }

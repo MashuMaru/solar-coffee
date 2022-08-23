@@ -1,12 +1,13 @@
 using System.Collections.Generic;
+using SolarCoffee.Data.Models;
 
 namespace SolarCoffee.Services.Product
 {
     public interface IProductService
     {
-        List<Data.Models.Product> GetAllProducts();
-        Data.Models.Product GetProductById(int id);
-        ServiceResponse<Data.Models.Product> CreateProduct(Data.Models.Product product);
-        ServiceResponse<Data.Models.Product> ArchiveProduct(int id);
+        List<ProductDataModel> GetAllProducts();
+        ProductDataModel GetProductById(int id);
+        ServiceResponse<ProductDataModel> CreateProduct(ProductDataModel product);
+        ServiceResponse<ProductDataModel> ArchiveProduct(int id);
     }
 }

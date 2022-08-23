@@ -11,7 +11,9 @@ namespace SolarCoffee.Web.Controllers
     [Route("api/")]
     public class ProductController : ControllerBase
     {
-        public ProductController(ILogger<ProductController> logger, IProductService productService)
+        public ProductController(
+            ILogger<ProductController> logger, 
+            IProductService productService)
         {
             _logger = logger;
             _productService = productService;
@@ -22,9 +24,7 @@ namespace SolarCoffee.Web.Controllers
         {
             _logger.LogInformation("Getting all products");
             var products = _productService.GetAllProducts();
-            var productViewModels = 
-                products.Select(
-                    product => ProductMapper.SerializeProductModel(product));
+            var productViewModels = products.Select(product => ProductMapper.SerializeProductModel(product));
 
             return Ok(productViewModels);
         }

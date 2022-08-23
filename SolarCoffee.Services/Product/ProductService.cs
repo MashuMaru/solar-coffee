@@ -15,12 +15,12 @@ namespace SolarCoffee.Services.Product
             _db = dbContext;
         }
         
-        public List<Data.Models.Product> GetAllProducts()
+        public List<ProductDataModel> GetAllProducts()
         {
             return _db.Products.ToList();
         }
 
-        public Data.Models.Product GetProductById(int id)
+        public ProductDataModel GetProductById(int id)
         {
             var productById = _db.Products.Find(id);
             if (productById == null)
@@ -31,12 +31,12 @@ namespace SolarCoffee.Services.Product
             return productById;
         }
         
-        public ServiceResponse<Data.Models.Product> CreateProduct(Data.Models.Product product)
+        public ServiceResponse<ProductDataModel> CreateProduct(ProductDataModel product)
         {
             try
             {
                 _db.Products.Add(product);
-                var newInventory = new ProductInventory
+                var newInventory = new ProductInventoryDataModel
                 {
                     Product = product,
                     QuantityOnHand = 0,
@@ -45,7 +45,7 @@ namespace SolarCoffee.Services.Product
                 _db.ProductInventories.Add(newInventory);
                 _db.SaveChanges();
 
-                return new ServiceResponse<Data.Models.Product>
+                return new ServiceResponse<ProductDataModel>
                 {
                     Data = product,
                     Time = DateTime.Now.ToLocalTime(),
@@ -55,7 +55,7 @@ namespace SolarCoffee.Services.Product
             }
             catch (Exception e)
             {
-                return new ServiceResponse<Data.Models.Product>
+                return new ServiceResponse<ProductDataModel>
                 {
                     Data = product,
                     Time = DateTime.Now.ToLocalTime(),
@@ -65,7 +65,7 @@ namespace SolarCoffee.Services.Product
             }
         }
 
-        public ServiceResponse<Data.Models.Product> ArchiveProduct(int id)
+        public ServiceResponse<ProductDataModel> ArchiveProduct(int id)
         {
             try
             {
@@ -73,7 +73,7 @@ namespace SolarCoffee.Services.Product
                 productToArchive.IsArchived = true;
                 _db.SaveChanges();
 
-                return new ServiceResponse<Data.Models.Product>
+                return new ServiceResponse<ProductDataModel>
                 {
                     Data = productToArchive,
                     Time = DateTime.Now.ToLocalTime(),
@@ -83,7 +83,7 @@ namespace SolarCoffee.Services.Product
             }
             catch (Exception e)
             {
-                return new ServiceResponse<Data.Models.Product>
+                return new ServiceResponse<ProductDataModel>
                 {
                     Data = null,
                     Time = DateTime.Now.ToLocalTime(),

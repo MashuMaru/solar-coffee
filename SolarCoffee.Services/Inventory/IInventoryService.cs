@@ -5,9 +5,9 @@ namespace SolarCoffee.Services.Inventory
 {
     public interface IInventoryService
     {
-        List<ProductInventory> GetCurrentInventory();
-        ServiceResponse<ProductInventory> UpdateUnitsAvailable(int id, int adjustment);
-        ProductInventory GetByProductId(int productId);
-        List<ProductInventorySnapshot> GetSnapShotHistory();
+        List<ProductInventoryDataModel> GetCurrentInventory();
+        ServiceResponse<ProductInventoryDataModel> UpdateUnitsAvailable(int id, int adjustment);
+        ProductInventoryDataModel GetByProductId(int productId);
+        List<ProductInventorySnapshotDataModel> GetSnapShotHistory();
     }
 }
