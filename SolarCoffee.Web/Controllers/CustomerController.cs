@@ -24,8 +24,6 @@ namespace SolarCoffee.Web.Controllers
     [HttpPost("create-customer")]
     public ActionResult CreateCustomer ([FromBody] CustomerModel model)
     {
-      model.CreatedOn = DateTime.UtcNow;
-      model.UpdatedOn = DateTime.UtcNow;
       var customerData = CustomerMapper.SerialiseCustomer(model);
       var newCustomer = _customerService.CreateCustomer(customerData);
 

@@ -15,7 +15,7 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/SolarCoffee.Web/bin/Debug/net5.0/SolarCoffee.Web.dll",
+            "program": "${workspaceFolder}/SolarCoffee.Web/bin/Debug/netcoreapp3.1/SolarCoffee.Web.dll",
             "args": [],
             "cwd": "${workspaceFolder}/SolarCoffee.Web",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console

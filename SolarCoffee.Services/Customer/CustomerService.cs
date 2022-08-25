@@ -42,6 +42,8 @@ namespace SolarCoffee.Services.Customer
 
         public ServiceResponse<CustomerDataModel> CreateCustomer(CustomerDataModel customer)
         {
+            customer.CreatedOn = DateTime.UtcNow;
+            customer.UpdatedOn = DateTime.UtcNow;
             try
             {
                 _db.Customers.Add(customer);
@@ -68,8 +70,8 @@ namespace SolarCoffee.Services.Customer
 
         public ServiceResponse<bool> DeleteCustomer(int customerId)
         {
-            var deleteCustomer = _db.Customers.Find(customerId);
-            if (deleteCustomer == null)
+            var customer = _db.Customers.Find(customerId);
+            if (customer == null)
             {
                 return new ServiceResponse<bool>()
                 {
@@ -81,7 +83,7 @@ namespace SolarCoffee.Services.Customer
             }
             try
             {
-                _db.Customers.Remove(deleteCustomer);
+                _db.Customers.Remove(customer);
                 _db.SaveChanges();
                 return new ServiceResponse<bool>()
                 {
